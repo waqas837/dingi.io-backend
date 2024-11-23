@@ -1,0 +1,45 @@
+# Node.js dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Testing
+/coverage
+
+# Next.js build output (client side, but can apply to full stack)
+/.next/
+/out/
+
+# Production build
+/build
+
+# Miscellaneous system files
+.DS_Store
+*.pem
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment variables
+.env*.local
+
+# Vercel configuration
+.vercel
+
+# TypeScript build info and related files
+*.tsbuildinfo
+next-env.d.ts
+
+# Public folder (if you don’t want to commit uploaded files or assets)
+/public/
+
+# Server side specific configurations
+/logs
+*.log
+*.pid
+
+# Temporary or runtime files
+/tmp
