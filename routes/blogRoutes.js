@@ -7,11 +7,25 @@ const { authenticateAdmin } = require("../middlewares/authMiddleware"); // Impor
 // Route for creating a blog (admin-only with image upload)
 router.post("/create", authenticateAdmin, upload, blogController.createBlog);
 router.get("/guides-gpstracker", upload, blogController.gpstrackerguidesGet);
+router.delete(
+  "/guides-gpstracker/:id",
+  authenticateAdmin,
+  blogController.gpstrackerguidesDel
+);
+
+router.get("/guides-gpstracker/:id", blogController.gpstrackerguidesSingleGet);
 router.post(
   "/guides-gpstracker",
   authenticateAdmin,
   upload,
   blogController.gpstrackerguidesPost
+);
+
+router.put(
+  "/guides-gpstracker",
+  authenticateAdmin,
+  upload,
+  blogController.gpstrackerguidesPut
 );
 
 // Route for getting all blogs (public)
@@ -21,7 +35,12 @@ router.get("/all", blogController.getAllBlogs);
 router.get("/:id", blogController.getBlogById);
 
 // Route for updating a blog (admin-only with image upload)
-router.put("/update/:id", authenticateAdmin, upload, blogController.updateBlog);
+router.put(
+  "/update/:id",
+  authenticateAdmin,
+  upload,
+  blogController.gpstrackerguidesPut
+);
 
 // Route for deleting a blog (admin-only)
 router.delete("/delete/:id", authenticateAdmin, blogController.deleteBlog);
